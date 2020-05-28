@@ -20,6 +20,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+            'rowma= rowma_ros2.rowma:main',
         ],
     },
 )
