@@ -12,6 +12,6 @@ RUN source /opt/ros/dashing/setup.bash && \
     cd /root/dev_ws && \
     colcon build && \
     source /opt/ros/dashing/setup.bash && source ~/dev_ws/install/local_setup.bash \
-    pip3 install "python-socketio[client]"
+    pip3 install "python-socketio[client]" path.py
 
 CMD ["ros2", "run", "rowma_ros2", "rowma"]

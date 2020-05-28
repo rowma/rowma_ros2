@@ -1,10 +1,11 @@
 from setuptools import setup
+from rowma_ros2 import version
 
 package_name = 'rowma_ros2'
 
 setup(
     name=package_name,
-    version='0.0.0',
+    version=version.version,
     packages=[package_name],
     data_files=[
         ('share/ament_index/resource_index/packages',
