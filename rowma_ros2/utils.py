@@ -59,15 +59,15 @@ def list_rosorun_commands():
     except KeyError:
         exit_error('Set COLCON_PREFIX_PATH correctly')
 
-    ws_path = colcon_prefix_path.replace("/install", "")
-    ws_packages = []
+    # ws_path = colcon_prefix_path.replace("/install", "")
+    # ws_packages = []
     executables = []
-    ws_packages += sp.check_output("ls -1 " + ws_path, shell=True).decode('utf-8').strip().split('\n')
+    # ws_packages += sp.check_output("ls -1 " + ws_path + "/src", shell=True).decode('utf-8').strip().split('\n')
     executables += sp.check_output("ros2 pkg executables", shell=True).decode('utf-8').strip().split('\n')
-    commands = list(map(lambda x: x.split(" ") in ws_packages, executables))
+    # commands = list(map(lambda x: x if x.split(" ")[0] in ws_packages else None, executables))
 
-    commands = list(filter(None, commands))
-    return commands
+    # commands = list(filter(None, commands))
+    return executables
 
 class bcolors:
     HEADER = '\033[95m'
